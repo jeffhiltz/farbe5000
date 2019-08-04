@@ -12,12 +12,12 @@
     </tr>
   </thead>
   <tbody>
-    {#each $colors as hex}
+    {#each $colorValues as value}
       <tr>
-        <td>{$colorValues[hex].hex}</td>
-        <td>{$colorValues[hex].lightness}</td>
-        <td>{$colorValues[hex].aStar}</td>
-        <td>{$colorValues[hex].bStar}</td>
+        <td>{value.hex}</td>
+        <td>{value.lightness}</td>
+        <td>{value.aStar}</td>
+        <td>{value.bStar}</td>
       </tr>
     {/each}
   </tbody>
