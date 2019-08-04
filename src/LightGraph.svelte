@@ -1,15 +1,12 @@
 <script>
   import { colors } from './colors.js'
-  import convert from 'color-convert' // './converter.js'
+  import convert from 'color-convert'
 
   let backColor = '#333333'
   let width = 500
   let height = 500
   $: barSpace = width / $colors.length
   $: barWidth = barSpace * 0.75
-
-  // The width of each bar as a percentage of the graph
-  // $: barWidth = (100 / $colors.length) * 0.75
 
   $: bars = $colors.map(hex => {
     const lightness = convert.hex.lab(hex)[0]
