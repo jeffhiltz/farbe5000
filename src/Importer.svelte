@@ -1,13 +1,20 @@
 <script>
-  import { colors } from './colors.js'
+  import { background, colors } from './colors.js'
+  import convert from 'color-convert'
 
   let raw = '111111' // '#111111 dogcat #777777 #eeeeee fe57a1'
+
+  function darkestHex(hexes) {
+    return hexes.reduce((darkest, current) => convert.hex.lab(current)[0] < convert.hex.lab(darkest)[0] ? current : darkest )
+  }
 
   const hexRegex = /#?[a-fA-F0-9]{6}/g
   $: {
     const match = raw.match(hexRegex)
     if (match !== null) {
-      colors.set(raw.match(hexRegex).map((rawHex) => rawHex.startsWith('#') ? rawHex : '#' + rawHex))
+      const hexes = raw.match(hexRegex).map((rawHex) => rawHex.startsWith('#') ? rawHex : '#' + rawHex)
+      colors.set(hexes)
+      background.set(darkestHex(hexes))
     } else {
       colors.set([])
     }

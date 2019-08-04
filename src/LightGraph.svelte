@@ -1,5 +1,5 @@
 <script>
-  import { colors } from './colors.js'
+  import { colors, background } from './colors.js'
   import convert from 'color-convert'
 
   let backColor = '#333333'
@@ -18,7 +18,7 @@
 </style>
 
 <svg width={width} height={height}>
-  <rect width="100%" height="100%" fill="{backColor}"></rect>
+  <rect width="100%" height="100%" fill="{$background}"></rect>
   {#each bars as {hex, lightness}, idx}
     <rect width="{barWidth}" height="{lightness}%" fill="{hex}" x="{idx * barSpace + (barSpace / 2) - (barWidth / 2)}" y="{100 - lightness}%"></rect>
   {/each}
