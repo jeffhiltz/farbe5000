@@ -1,11 +1,17 @@
 <script>
-	export let name;
+  import ColorTable from './ColorTable.svelte'
+  import Importer from './Importer.svelte'
+  import LightGraph from './LightGraph.svelte'
 </script>
 
 <style>
-	h1 {
-		color: purple;
-	}
+  h1 {
+    color: purple;
+  }
 </style>
 
-<h1>Hello {name}!</h1>
+<h1>Color 5000</h1>
+
+<Importer />
+<ColorTable />
+<LightGraph />
