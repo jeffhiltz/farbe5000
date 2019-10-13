@@ -8,7 +8,8 @@
   $: barSpace = width / $colors.length
   $: barWidth = barSpace * 0.75
 
-  $: bars = $colors.map(hex => {
+  $: bars = $colors.map(color => {
+    const hex = color.hex
     const lightness = convert.hex.lab(hex)[0]
     return { hex: hex, lightness: lightness }
   })
