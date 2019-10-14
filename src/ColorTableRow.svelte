@@ -37,10 +37,10 @@
 
 <tr>
   <td>{hex}</td>
-  <td><input type=range min=0 max=255 bind:value={red}></td>
-  <td><input type=range min=0 max=255 bind:value={green}></td>
-  <td><input type=range min=0 max=255 bind:value={blue}></td>
-  <td><input type=range min=0 max=100 bind:value={lightness}></td>
-  <td><input type=range min=-86 max=98 bind:value="{aStar}"></td>
-  <td><input type=range min=-108 max=94 bind:value="{bStar}"></td>
+  <td><input type=number min=0 max=255 bind:value={red}></td>
+  <td><input type=number min=0 max=255 bind:value={green}></td>
+  <td><input type=number min=0 max=255 bind:value={blue}></td>
+  <td><input type=number min=0 max=100 bind:value={lightness}></td>
+  <td><input type=number min=-86 max=98 bind:value="{aStar}"></td>
+  <td><input type=number min=-108 max=94 bind:value="{bStar}"></td>
 </tr>
