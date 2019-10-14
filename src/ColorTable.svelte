@@ -1,5 +1,6 @@
 <script>
   import { colors, colorValues } from './colors.js'
+  import ColorTableRow from './ColorTableRow.svelte'
   import convert from 'color-convert'
 
   function handleChange(e) {
@@ -19,6 +20,9 @@
   <thead>
     <tr>
       <th>Hex</th>
+      <th>Red</th>
+      <th>Green</th>
+      <th>Blue</th>
       <th>Lightness</th>
       <th>aStar</th>
       <th>bStar</th>
@@ -26,12 +30,7 @@
   </thead>
   <tbody>
     {#each $colorValues as value, idx (value.id)}
-      <tr>
-        <td>{value.hex}</td>
-        <td><input color_id={value.id} on:change="{handleChange}" value="{value.lightness}"></td>
-        <td><input color_id={value.id} on:change="{handleChange}" value="{value.aStar}"></td>
-        <td>{value.bStar}</td>
-      </tr>
+       <ColorTableRow {...value}/>
     {/each}
   </tbody>
 </table>
