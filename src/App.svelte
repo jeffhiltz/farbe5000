@@ -11,7 +11,7 @@
   }
 </style>
 
-<h1>Color 5000</h1>
+<h1>Farbe 5000</h1>
 
 <Importer />
 <BackgroundPicker />

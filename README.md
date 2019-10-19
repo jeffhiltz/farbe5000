@@ -1,4 +1,4 @@
-Svelte version of my Colour5000 workshop.
+Svelte version of my Farbe5000 workshop.
 
 # Brainstorming
 
