@@ -34,3 +34,13 @@ o add an export box with a button
 - colors is array of hexes
 - colorValues is derrived
 - table
+
+
+
+So when a person sets a new value for LAB, what RGB/HEX should it map to?  Each LAB can map to multiple ones.  The app needs to pick the RGB/HEX that is going to map back to that LAB value.
+o does every LAB value map to an RGB that will map back to it?
+ - probably not
+ o if not, what hex should be used?
+  - the default one from the algorithm?
+  - the "closest" one that does have a LAB reciprocal?
+   o how is this found?
