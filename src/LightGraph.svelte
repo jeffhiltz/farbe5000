@@ -1,17 +1,18 @@
 <script>
-  import { colors, background } from './colors.js'
+  import { colorValues, background } from './colors.js'
   import convert from 'color-convert'
 
-  let backColor = '#333333'
   let width = 500
   let height = 500
-  $: barSpace = width / $colors.length
+  $: barSpace = width / $colorValues.length
   $: barWidth = barSpace * 0.75
+  $: backColor = `#${convert.lab.hex($background)}`
 
-  $: bars = $colors.map(color => {
-    const hex = color.hex
-    const lightness = convert.hex.lab(hex)[0]
-    return { hex: hex, lightness: lightness }
+  $: bars = $colorValues.map(color => {
+    return {
+      hex: color.hex,
+      lightness: color.lightness
+    }
   })
 </script>
 
@@ -19,7 +20,7 @@
 </style>
 
 <svg width={width} height={height}>
-  <rect width="100%" height="100%" fill="{$background}"></rect>
+  <rect width="100%" height="100%" fill="{backColor}"></rect>
   {#each bars as {hex, lightness}, idx}
     <rect width="{barWidth}" height="{lightness}%" fill="{hex}" x="{idx * barSpace + (barSpace / 2) - (barWidth / 2)}" y="{100 - lightness}%"></rect>
   {/each}

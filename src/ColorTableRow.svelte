@@ -1,5 +1,5 @@
 <script>
-  import { colors, colorValues } from './colors.js'
+  import { colors } from './colors.js'
   import convert from 'color-convert'
 
   export let id
@@ -14,32 +14,27 @@
   export let aStar
   export let bStar
 
-  function setColor(hex) {
-    // console.log(`trying to set color ${id} to ${hex}`)
+  function setColor(lightness, aStar, bStar) {
     colors.update(cols => {
-      cols[id].hex = hex
+      cols[id].value = [lightness, aStar, bStar]
       return cols
     })
   }
 
-  // handle changes to RGB values
-  $: {
-    const newHex = convert.rgb.hex(red, green, blue)
-    setColor(`#${newHex}`)
-  }
-
   // handle changes to LAB values
   $: {
-    const newHex = convert.lab.hex(lightness, aStar, bStar)
-    setColor(`#${newHex}`)
+    setColor(lightness, aStar, bStar)
   }
 </script>
 
 <tr>
   <td>{hex}</td>
-  <td><input type=number min=0 max=255 bind:value={red}></td>
-  <td><input type=number min=0 max=255 bind:value={green}></td>
-  <td><input type=number min=0 max=255 bind:value={blue}></td>
+  <td>{red}</td>
+  <td>{green}</td>
+  <td>{blue}</td>
+  <td>{hue}</td>
+  <td>{saturation}</td>
+  <td>{hsLightness}</td>
   <td><input type=number min=0 max=100 bind:value={lightness}></td>
   <td><input type=number min=-86 max=98 bind:value="{aStar}"></td>
   <td><input type=number min=-108 max=94 bind:value="{bStar}"></td>
