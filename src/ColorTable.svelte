@@ -6,6 +6,9 @@
 <table>
   <thead>
     <tr>
+      <th>LAB Lightness</th>
+      <th>aStar (G-R)</th>
+      <th>bStar (B-Y)</th>
       <th>Hex</th>
       <th>Red</th>
       <th>Green</th>
@@ -13,9 +16,7 @@
       <th>Hue</th>
       <th>Saturation</th>
       <th>HSL Lightness</th>
-      <th>LAB Lightness</th>
-      <th>aStar</th>
-      <th>bStar</th>
+      <th>Swatch</th>
     </tr>
   </thead>
   <tbody>
