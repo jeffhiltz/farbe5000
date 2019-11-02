@@ -4,8 +4,8 @@
 
   let width = 500
   let height = 500
-  const pointWidth = 10
-  const pointHeight = 10
+  const pointWidth = 20
+  const pointHeight = 20
   const maxAValue = 100
   const minAValue = -100
   const maxBValue = 100
@@ -32,7 +32,7 @@
 <svg width={width} height={height}>
   <rect width="100%" height="100%" fill="{backColor}"></rect>
   {#each points as {hex, aPercent, bPercent}, idx}
-    <rect width="{pointWidth}" height="{pointWidth}" fill="{hex}" x="{(aPercent * width) - (pointWidth / 2)}" y="{(bPercent * height) - (pointHeight / 2)}"></rect>
+    <ellipse rx="{pointWidth / 2}" ry="{pointWidth / 2}" fill="{hex}" cx="{aPercent * width}" cy="{bPercent * height}"></ellipse>
   {/each}
 </svg>
 
