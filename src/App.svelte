@@ -3,6 +3,7 @@
   import ColorTable from './ColorTable.svelte'
   import Importer from './Importer.svelte'
   import LightGraph from './LightGraph.svelte'
+  import ScatterGraph from './ScatterGraph.svelte'
 </script>
 
 <style>
@@ -17,3 +18,4 @@
 <BackgroundPicker />
 <ColorTable />
 <LightGraph />
+<ScatterGraph />
