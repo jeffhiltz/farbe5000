@@ -1,11 +1,6 @@
 <script>
-  import { background, colors } from './colors.js'
+  import { exportText } from './text.js'
   import convert from 'color-convert'
-
-  const text = ''
-
-  function doExport() {
-  }
 </script>
 
 <style>
@@ -14,5 +9,4 @@
 
 <h2>Export Modified Values</h2>
 
-<textarea readonly bind:value={text}></textarea>
-<button on:click={doExport}>Export</button>
+<textarea readonly bind:value={$exportText}></textarea>

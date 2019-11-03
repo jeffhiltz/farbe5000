@@ -1,5 +1,6 @@
 <script>
   import { background, colors } from './colors.js'
+  import { importText } from './text.js'
   import convert from 'color-convert'
 
   let raw = '111111 #111111 dogcat #777777 #eeeeee fe57a1'
@@ -17,13 +18,16 @@
         return {
           id,
           value,
+          originalHex: rawHex,
         }
       })
       colors.set(newColors)
       background.set(darkestColor(newColors))
+      importText.set(raw)
     } else {
       colors.set([])
       background.set([0, 0, 0])
+      importText.set(raw)
     }
   }
 </script>

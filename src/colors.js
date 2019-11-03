@@ -4,6 +4,7 @@ import convert from 'color-convert';
 // each color entry is an object with:
 // id: a unique, integer, identifier
 // value: lab array [lightness, a, b]
+// originalHex: original imported hex value (or null if not applicable)
 export const colors = writable([]);
 export const background = writable([0, 0, 0]); // TODO maybe this should be a index, not a value?
 

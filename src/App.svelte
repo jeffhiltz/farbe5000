@@ -2,6 +2,7 @@
   import BackgroundPicker from './BackgroundPicker.svelte'
   import ColorTable from './ColorTable.svelte'
   import Importer from './Importer.svelte'
+  import Exporter from './Exporter.svelte'
   import LightGraph from './LightGraph.svelte'
   import ScatterGraph from './ScatterGraph.svelte'
 </script>
@@ -15,6 +16,7 @@
 <h1>Farbe 5000</h1>
 
 <Importer />
+<Exporter />
 <BackgroundPicker />
 <ColorTable />
 <LightGraph />
