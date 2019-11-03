@@ -9,7 +9,7 @@
   }
 
   function doImport() {
-    const hexRegex = /#?[a-fA-F0-9]{6}/g
+    const hexRegex = /[a-fA-F0-9]{6}/g
     const match = raw.match(hexRegex)
     if (match !== null) {
       const newColors = match.map((rawHex, id) => {
