@@ -2,11 +2,16 @@ import { derived, writable } from 'svelte/store';
 import convert from 'color-convert';
 
 // each color entry is an object with:
-// id: a unique, integer, identifier
+// id: a unique, integer identifier
 // value: lab array [lightness, a, b]
 // originalHex: original imported hex value (or null if not applicable)
+// eg: {
+//   id: 5,
+//   value: [62, 69, -5],
+//   originalHex: 'f357a1'
+// }
 export const colors = writable([]);
-export const background = writable([0, 0, 0]); // TODO maybe this should be a index, not a value?
+export const background = writable([0, 0, 0]); // TODO maybe this should be an index, not a value?
 
 export const colorValues = derived(
   colors,
