@@ -1,5 +1,5 @@
 <script>
-  import { sortBy, colorOrder } from './colors.js'
+  import { sortBy } from './colors.js'
 </script>
 
 <h2>Sort Order</h2>
@@ -17,6 +17,4 @@
   <option value="hsLightness">HSL Lightness</option>
 
 </select>
-
-<p>{JSON.stringify($colorOrder)}</p>
 

@@ -13,9 +13,11 @@ import convert from 'color-convert';
 export const colors = writable([]);
 export const background = writable([0, 0, 0]); // TODO maybe this should be an index, not a value?
 
+export const sortBy = writable('id');
+
 export const colorValues = derived(
-  colors,
-  ($colors) => $colors.map((color) => {
+  [colors, sortBy],
+  ([$colors, $sortBy]) => $colors.map((color) => {
     const rgb = convert.lab.rgb(color.value);
     const rawHex = convert.rgb.hex(rgb);
     const hex = rawHex.startsWith('#') ? rawHex : `#${rawHex}`; // TODO store without hash
@@ -33,13 +35,6 @@ export const colorValues = derived(
       aStar: color.value[1],
       bStar: color.value[2],
     };
-  }),
+  }).sort((a, b) => a[$sortBy] - b[$sortBy]), // TODO only works for numeric values (ie: not hex...)
 );
 
-export const sortBy = writable('id');
-
-// TODO only works for numeric values (ie: not hex...)
-export const colorOrder = derived(
-  [sortBy, colorValues],
-  ([$sortBy, $colorValues]) => $colorValues.map(colorVal => ({id: colorVal.id, sortVal: colorVal[$sortBy]})).sort((a,b) => a.sortVal - b.sortVal),
-);
