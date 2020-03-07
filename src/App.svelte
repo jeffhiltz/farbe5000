@@ -1,5 +1,6 @@
 <script>
   import BackgroundPicker from './BackgroundPicker.svelte'
+  import SortSelector from './SortSelector.svelte'
   import ColorTable from './ColorTable.svelte'
   import Importer from './Importer.svelte'
   import Exporter from './Exporter.svelte'
@@ -18,6 +19,7 @@
 <Importer />
 <Exporter />
 <BackgroundPicker />
+<SortSelector />
 <ColorTable />
 <LightGraph />
 <ScatterGraph />

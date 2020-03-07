@@ -35,3 +35,11 @@ export const colorValues = derived(
     };
   }),
 );
+
+export const sortBy = writable('id');
+
+// TODO only works for numeric values (ie: not hex...)
+export const colorOrder = derived(
+  [sortBy, colorValues],
+  ([$sortBy, $colorValues]) => $colorValues.map(colorVal => ({id: colorVal.id, sortVal: colorVal[$sortBy]})).sort((a,b) => a.sortVal - b.sortVal),
+);
