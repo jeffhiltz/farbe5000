@@ -46,6 +46,18 @@
   }
 </script>
 
+<style>
+  input[type=number] {
+    width: 4em;
+  }
+
+  td {
+    text-align: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+</style>
+
 <tr>
   <td><button on:click={handleUpClick}>&#8593;</button><button on:click={handleDownClick}>&#8595;</button></td>
   <td><input type=number min=0 max=100 bind:value={lightness}></td>

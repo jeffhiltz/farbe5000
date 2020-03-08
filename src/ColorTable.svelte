@@ -15,6 +15,19 @@
 
 </script>
 
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  th {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+</style>
+
 <table>
   <thead>
     <tr>
