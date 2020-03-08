@@ -1,6 +1,7 @@
 <script>
   import { colors } from './colors.js'
   import convert from 'color-convert'
+  import { createEventDispatcher } from 'svelte';
 
   export let id
   export let hex
@@ -14,6 +15,8 @@
   export let aStar
   export let bStar
 
+  export let position
+
   function setColor(lightness, aStar, bStar) {
     colors.update(cols => {
       cols[id].value = [lightness, aStar, bStar]
@@ -23,11 +26,28 @@
 
   // handle changes to LAB values
   $: {
-    setColor(lightness, aStar, bStar)
+    setColor(lightness, aStar, bStar);
+  }
+
+  const dispatch = createEventDispatcher();
+
+  function handleUpClick(event) {
+    dispatch('sortChange', {
+      oldPos: position,
+      newPos: position - 1,
+    });
+  }
+
+  function handleDownClick(event) {
+    dispatch('sortChange', {
+      oldPos: position,
+      newPos: position + 1,
+    });
   }
 </script>
 
 <tr>
+  <td><button on:click={handleUpClick}>Up</button><button on:click={handleDownClick}>Down</button></td>
   <td><input type=number min=0 max=100 bind:value={lightness}></td>
   <td><input type=number min=-86 max=98 bind:value="{aStar}"></td>
   <td><input type=number min=-108 max=94 bind:value="{bStar}"></td>

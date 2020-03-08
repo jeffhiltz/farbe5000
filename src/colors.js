@@ -35,6 +35,7 @@ export const colorValues = derived(
       aStar: color.value[1],
       bStar: color.value[2],
     };
-  }).sort((a, b) => a[$sortBy] - b[$sortBy]), // TODO only works for numeric values (ie: not hex...)
+  })// .sort((a, b) => a.sortPosition - b.sortPosition),
+    //   }).sort((a, b) => a[$sortBy] - b[$sortBy]), // TODO only works for numeric values (ie: not hex...)
 );
 

@@ -1,11 +1,24 @@
 <script>
-  import { colorValues } from './colors.js'
+  import { colors, colorValues } from './colors.js'
   import ColorTableRow from './ColorTableRow.svelte'
+
+  function changeSortOrder(event) {
+    const oldPos = event.detail.oldPos;
+    const newPos = event.detail.newPos;
+    if (newPos >= 0 && newPos < $colors.length) {
+      colors.update(cols => {
+        cols.splice(newPos, 0, cols.splice(oldPos, 1)[0]);
+        return cols;
+      });
+    }
+  }
+
 </script>
 
 <table>
   <thead>
     <tr>
+      <th>Move</th>
       <th>LAB Lightness</th>
       <th>aStar (G-R)</th>
       <th>bStar (B-Y)</th>
@@ -21,7 +34,7 @@
   </thead>
   <tbody>
     {#each $colorValues as value, idx (value.id)}
-       <ColorTableRow {...value}/>
+    <ColorTableRow on:sortChange={changeSortOrder} {...value} position={idx}/>
     {/each}
   </tbody>
 </table>
