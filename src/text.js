@@ -10,7 +10,7 @@ export const exportText = derived(
   ([$importText, $colors, $colorValues]) => {
     const newText = $importText.replace(hexRegex, (match) => {
       const colorEntry = $colors.find((color) => color.originalHex === match);
-      return $colorValues[colorEntry.id].hex;
+      return colorEntry ? $colorValues[colorEntry.id].hex : match;
     });
     return newText;
   },
