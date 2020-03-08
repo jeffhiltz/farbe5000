@@ -32,6 +32,7 @@
   <thead>
     <tr>
       <th>Move</th>
+      <th>Swatch</th>
       <th>LAB Lightness</th>
       <th>aStar (G-R)</th>
       <th>bStar (B-Y)</th>
@@ -42,7 +43,6 @@
       <th>Hue</th>
       <th>Saturation</th>
       <th>HSL Lightness</th>
-      <th>Swatch</th>
     </tr>
   </thead>
   <tbody>

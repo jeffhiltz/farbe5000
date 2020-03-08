@@ -60,6 +60,7 @@
 
 <tr>
   <td><button on:click={handleUpClick}>&#8593;</button><button on:click={handleDownClick}>&#8595;</button></td>
+  <td bgcolor="{hex}"></td>
   <td><input type=number min=0 max=100 bind:value={lightness}></td>
   <td><input type=number min=-86 max=98 bind:value="{aStar}"></td>
   <td><input type=number min=-108 max=94 bind:value="{bStar}"></td>
@@ -70,5 +71,4 @@
   <td>{hue}</td>
   <td>{saturation}</td>
   <td>{hsLightness}</td>
-  <td bgcolor="{hex}"></td>
 </tr>
