@@ -1,7 +1,7 @@
 import { derived, writable } from 'svelte/store';
 import { colors, colorValues } from './colors.js';
 
-export const importText = writable('hats');
+export const importText = writable('');
 
 const hexRegex = /[a-fA-F0-9]{6}/g;
 
