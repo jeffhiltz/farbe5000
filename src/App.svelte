@@ -10,16 +10,27 @@
 
 <style>
   h1 {
-    color: purple;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+  }
+  section {
+    display: flex;
+    flex-flow: row wrap;
   }
 </style>
 
 <h1>Farbe 5000</h1>
 
-<Importer />
-<Exporter />
+<p>A tool.</p>
+<p>Source is on GitHub: <a href="https://github.com/jeffhiltz/farbe5000">https://github.com/jeffhiltz/farbe5000</a></p>
+<section>
+  <Importer />
+  <Exporter />
+</section>
 <BackgroundPicker />
 <!-- <SortSelector /> -->
-<ColorTable />
-<LightGraph />
-<ScatterGraph />
+<section>
+  <ColorTable />
+  <LightGraph />
+  <ScatterGraph />
+</section>
