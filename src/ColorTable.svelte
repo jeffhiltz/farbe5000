@@ -33,16 +33,17 @@
     <tr>
       <th>Move</th>
       <th>Swatch</th>
-      <th>LAB Lightness</th>
+      <th>Lightness</th>
+      <!--      <th>LAB Lightness</th> -->
       <th>aStar (G-R)</th>
       <th>bStar (B-Y)</th>
       <th>Hex</th>
       <th>Red</th>
       <th>Green</th>
       <th>Blue</th>
-      <th>Hue</th>
+<!--      <th>Hue</th>
       <th>Saturation</th>
-      <th>HSL Lightness</th>
+      <th>HSL Lightness</th> -->
     </tr>
   </thead>
   <tbody>

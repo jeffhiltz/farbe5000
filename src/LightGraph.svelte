@@ -19,11 +19,11 @@
 <style>
   svg {
     box-sizing: border-box;
-    width: 48%;
+    width: 100%;
   }
 </style>
 
-<svg viewBox="0 0 500 500">
+<svg viewBox="0 0 500 100">
   <rect width="100%" height="100%" fill="{backColor}"></rect>
   {#each bars as {hex, lightness}, idx}
     <rect width="{barWidth}" height="{lightness}%" fill="{hex}" x="{idx * barSpace + (barSpace / 2) - (barWidth / 2)}" y="{100 - lightness}%"></rect>

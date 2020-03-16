@@ -28,8 +28,7 @@
 
 <style>
   svg {
-    box-sizing: border-box;
-    width: 48%;
+    flex: 1 8rem;
   }
 </style>
 

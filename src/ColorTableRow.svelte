@@ -68,7 +68,7 @@
   <td>{red}</td>
   <td>{green}</td>
   <td>{blue}</td>
-  <td>{hue}</td>
+  <!--<td>{hue}</td>
   <td>{saturation}</td>
-  <td>{hsLightness}</td>
+  <td>{hsLightness}</td>-->
 </tr>

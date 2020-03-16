@@ -27,10 +27,10 @@
   <Importer />
   <Exporter />
 </section>
-<BackgroundPicker />
+<!-- <BackgroundPicker /> -->
 <!-- <SortSelector /> -->
+<LightGraph />
 <section>
   <ColorTable />
-  <LightGraph />
   <ScatterGraph />
 </section>
