@@ -37,7 +37,6 @@ input, button, select, textarea {
   margin: 0 0 0.5em 0;
   box-sizing: border-box;
   border: 0.05em solid var(--grey80);
-  border-radius: 0.2em;
 }
 
 button {
