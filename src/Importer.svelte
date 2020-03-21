@@ -41,7 +41,6 @@
   textarea {
     width: 100%;
     height: 15rem;
-    font-size: 0.8rem;
   }
 
   button {
@@ -51,7 +50,7 @@
 
 <div>
   <h2>Input Values</h2>
-  <p>You can put any text in this import box.  When you hit the import button the tool will find any hex codes (whether they're prefixed by a # or not).  Importing will replace all values in the table with whatever values are found in the import box.</p>
+  <p>You can put any text in this import box.  When you hit the import button the tool will find any hex codes (whether they're prefixed by a # or not) and import them into the table below.  <em>Importing will replace all values in the table with whatever values are found in the import box.</em></p>
 
   <textarea bind:value={raw}></textarea>
   <button on:click={doImport}>Import</button>

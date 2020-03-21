@@ -10,9 +10,9 @@
 
 <style>
   h1 {
-    font-weight: 800;
     font-size: 4.5rem;
   }
+
   section {
     display: flex;
     flex-flow: row wrap;
@@ -34,7 +34,9 @@
 
 <h1>FARBE 5000</h1>
 
-<p>A tool.</p>
+<p>
+  A tool for analyzing and modifying color schemes based on the <a href="https://en.wikipedia.org/wiki/CIELAB_color_space">CIELAB color space</a>.  CIELAB was designed so that the same amount of numerical change in its values corresponds to roughly the same amount of visually perceived change.  Using this tool you can create a color scheme that will have a balanced appearance.
+</p>
 <p>Source is on GitHub: <a href="https://github.com/jeffhiltz/farbe5000">https://github.com/jeffhiltz/farbe5000</a></p>
 <section>
   <Importer />

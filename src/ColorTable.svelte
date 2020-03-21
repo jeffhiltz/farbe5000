@@ -44,6 +44,7 @@
     top: 0;
     background-color: var(--grey100);
     background-clip: padding-box;
+    font-weight: 700;
   }
 
   button {
