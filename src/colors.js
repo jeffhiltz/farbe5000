@@ -20,16 +20,12 @@ export const colorValues = derived(
   ([$colors, $sortBy]) => $colors.map((color) => {
     const rgb = convert.lab.rgb(color.value);
     const hex = convert.rgb.hex(rgb);
-    const hsl = convert.lab.hsl(color.value);
     return {
       id: color.id,
       hex,
       red: rgb[0],
       green: rgb[1],
       blue: rgb[2],
-      hue: hsl[0],
-      saturation: hsl[1],
-      hsLightness: hsl[2],
       lightness: color.value[0],
       aStar: color.value[1],
       bStar: color.value[2],

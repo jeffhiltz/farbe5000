@@ -12,9 +12,5 @@
   <option value="red">Red</option>
   <option value="green">Green</option>
   <option value="blue">Blue</option>
-  <option value="hue">Hue</option>
-  <option value="saturation">Saturation</option>
-  <option value="hsLightness">HSL Lightness</option>
-
 </select>
 

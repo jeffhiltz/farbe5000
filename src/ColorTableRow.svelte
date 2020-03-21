@@ -8,9 +8,6 @@
   export let red
   export let green
   export let blue
-  export let hue
-  export let saturation
-  export let hsLightness
   export let lightness
   export let aStar
   export let bStar
@@ -68,7 +65,4 @@
   <td>{red}</td>
   <td>{green}</td>
   <td>{blue}</td>
-  <!--<td>{hue}</td>
-  <td>{saturation}</td>
-  <td>{hsLightness}</td>-->
 </tr>
