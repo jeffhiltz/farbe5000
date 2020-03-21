@@ -47,8 +47,8 @@
 <h2>Values</h2>
 <p>
 Adjust the values for the colors in the scheme.
-The top graph displays the <strong>lightness</strong> values for each color.
-The bottom graph displays the <strong>a*</strong> and <strong>b*</strong> values for each color.
+The top graph displays the <strong>lightness</strong> value for each color.
+The bottom graph displays the <strong>a*</strong> and <strong>b*</strong> values for each color.  a* is on the x-axis and b* is on the y-axis.  The center of the plot is 0, 0.
 
 </p>
 <div id="table-and-graphs">
