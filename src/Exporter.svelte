@@ -13,7 +13,6 @@
   textarea {
     width: 100%;
     height: 15rem;
-    font-size: 0.8rem;
   }
 </style>
 
