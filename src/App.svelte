@@ -10,8 +10,8 @@
 
 <style>
   h1 {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 800;
+    font-size: 4.5rem;
   }
   section {
     display: flex;
@@ -32,7 +32,7 @@
   }
 </style>
 
-<h1>Farbe 5000</h1>
+<h1>FARBE 5000</h1>
 
 <p>A tool.</p>
 <p>Source is on GitHub: <a href="https://github.com/jeffhiltz/farbe5000">https://github.com/jeffhiltz/farbe5000</a></p>

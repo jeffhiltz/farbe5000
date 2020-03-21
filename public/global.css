@@ -20,6 +20,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
 a {
   font-weight: 600;
   color: var(--grey20);
