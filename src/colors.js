@@ -19,8 +19,7 @@ export const colorValues = derived(
   [colors, sortBy],
   ([$colors, $sortBy]) => $colors.map((color) => {
     const rgb = convert.lab.rgb(color.value);
-    const rawHex = convert.rgb.hex(rgb);
-    const hex = rawHex.startsWith('#') ? rawHex : `#${rawHex}`; // TODO store without hash
+    const hex = convert.rgb.hex(rgb);
     const hsl = convert.lab.hsl(color.value);
     return {
       id: color.id,
