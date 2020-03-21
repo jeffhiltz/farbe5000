@@ -53,8 +53,8 @@
 
   td {
     text-align: center;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid var(--grey80);
+    border-right: 1px solid var(--grey80);
   }
 </style>
 

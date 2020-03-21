@@ -21,14 +21,15 @@
   }
 
   th {
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid var(--grey80);
+    border-right: 1px solid var(--grey80);
     padding-left: 0.5em;
     padding-right: 0.5em;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    background-color: #fff;
+    background-color: var(--grey100);
+    background-clip: padding-box;
   }
 </style>
 
