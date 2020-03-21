@@ -13,9 +13,23 @@
     }
   }
 
+  function addRow() {
+    const newRow = {
+      id: $colors.length,
+      value: [0, 0, 0],
+      originalHex: '',
+    };
+    colors.set([...$colors, newRow]);
+  }
+
 </script>
 
 <style>
+  div {
+    display: flex;
+    flex-flow: column;
+  }
+
   table {
     border-collapse: collapse;
   }
@@ -31,29 +45,36 @@
     background-color: var(--grey100);
     background-clip: padding-box;
   }
+
+  button {
+    margin-top: 0.5rem;
+  }
 </style>
 
-<table>
-  <thead>
-    <tr>
-      <th>Move</th>
-      <th>Swatch</th>
-      <th>Lightness</th>
-      <!--      <th>LAB Lightness</th> -->
-      <th>aStar (G-R)</th>
-      <th>bStar (B-Y)</th>
-      <th>Hex</th>
-      <th>Red</th>
-      <th>Green</th>
-      <th>Blue</th>
-<!--      <th>Hue</th>
-      <th>Saturation</th>
-      <th>HSL Lightness</th> -->
-    </tr>
-  </thead>
-  <tbody>
-    {#each $colorValues as value, idx (value.id)}
-    <ColorTableRow on:sortChange={changeSortOrder} {...value} position={idx}/>
-    {/each}
-  </tbody>
-</table>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Move</th>
+        <th>Swatch</th>
+        <th>Lightness</th>
+        <!--      <th>LAB Lightness</th> -->
+        <th>aStar (G-R)</th>
+        <th>bStar (B-Y)</th>
+        <th>Hex</th>
+        <th>Red</th>
+        <th>Green</th>
+        <th>Blue</th>
+  <!--      <th>Hue</th>
+        <th>Saturation</th>
+        <th>HSL Lightness</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {#each $colorValues as value, idx (value.id)}
+      <ColorTableRow on:sortChange={changeSortOrder} {...value} position={idx}/>
+      {/each}
+    </tbody>
+  </table>
+  <button on:click={addRow}>Add Row</button>
+</div>
