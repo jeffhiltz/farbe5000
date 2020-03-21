@@ -45,7 +45,12 @@
 <!-- <BackgroundPicker /> -->
 <!-- <SortSelector /> -->
 <h2>Values</h2>
-<p>Some description...</p>
+<p>
+Adjust the values for the colors in the scheme.
+The top graph displays the <strong>lightness</strong> values for each color.
+The bottom graph displays the <strong>a*</strong> and <strong>b*</strong> values for each color.
+
+</p>
 <div id="table-and-graphs">
   <ColorTable />
   <div id="graphs">
