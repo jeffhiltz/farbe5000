@@ -38,7 +38,7 @@
 <svg viewBox="0 0 500 500">
   <rect width="100%" height="100%" fill="{backColor}"></rect>
   {#each points as {hex, aPercent, bPercent}, idx}
-    <ellipse rx="{pointWidth / 2}" ry="{pointWidth / 2}" fill="{hex}" cx="{aPercent * width}" cy="{bPercent * height}"></ellipse>
+    <ellipse rx="{pointWidth / 2}" ry="{pointWidth / 2}" fill="#{hex}" cx="{aPercent * width}" cy="{bPercent * height}"></ellipse>
   {/each}
 </svg>
 
