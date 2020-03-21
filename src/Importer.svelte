@@ -33,25 +33,26 @@
 </script>
 
 <style>
+  div {
+    flex: 1 20rem;
+    margin-right: 0.5rem;
+  }
+
   textarea {
     width: 100%;
-    flex-basis: 12rem;
+    height: 15rem;
     font-size: 0.8rem;
   }
 
-  section {
-    flex: 1 20rem;
-    display: flex;
-    flex-flow: column;
-    box-sizing: content-box;
-    margin-right: 0.5rem;
+  button {
+    width: 100%;
   }
 </style>
 
-<section>
+<div>
   <h2>Input Values</h2>
   <p>You can put any text in this import box.  When you hit the import button the tool will find any hex codes (whether they're prefixed by a # or not).  Importing will replace all values in the table with whatever values are found in the import box.</p>
 
   <textarea bind:value={raw}></textarea>
   <button on:click={doImport}>Import</button>
-</section>
+</div>

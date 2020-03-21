@@ -17,6 +17,18 @@
     display: flex;
     flex-flow: row wrap;
   }
+
+  #table-and-graphs {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  #graphs {
+    flex: 1;
+    align-self: flex-start;
+    position: sticky;
+    top: 0;
+  }
 </style>
 
 <h1>Farbe 5000</h1>
@@ -29,8 +41,12 @@
 </section>
 <!-- <BackgroundPicker /> -->
 <!-- <SortSelector /> -->
-<LightGraph />
-<section>
+<h2>Values</h2>
+<p>Some description...</p>
+<div id="table-and-graphs">
   <ColorTable />
-  <ScatterGraph />
-</section>
+  <div id="graphs">
+    <LightGraph />
+    <ScatterGraph />
+  </div>
+</div>

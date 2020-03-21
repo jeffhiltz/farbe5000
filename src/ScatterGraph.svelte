@@ -28,7 +28,10 @@
 
 <style>
   svg {
-    flex: 1 8rem;
+    width: 100%;
+    display: block;
+    max-height: 49.5vh;
+    margin: 0.5vh 0 0 0;
   }
 </style>
 
