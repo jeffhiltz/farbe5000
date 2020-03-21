@@ -27,6 +27,7 @@
     flex: 1;
     align-self: flex-start;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
   }
 </style>

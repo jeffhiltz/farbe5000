@@ -25,6 +25,10 @@
     border-right: 1px solid #ccc;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #fff;
   }
 </style>
 
