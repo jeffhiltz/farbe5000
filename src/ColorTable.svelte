@@ -14,12 +14,23 @@
   }
 
   function addRow() {
+    const maxId = $colors.reduce((max, cur) =>  Math.max(max, cur.id), 0)
     const newRow = {
-      id: $colors.length,
+      id: maxId + 1,
       value: [0, 0, 0],
       originalHex: '',
     };
     colors.set([...$colors, newRow]);
+  }
+
+  function removeDuplicates() {
+    colors.update(cols => {
+      const seen = new Set()
+      return cols.filter(color => {
+        const k = JSON.stringify(color.value)
+        return seen.has(k) ? false : seen.add(k)
+      })
+    })
   }
 
 </script>
@@ -74,4 +85,5 @@
     </tbody>
   </table>
   <button on:click={addRow}>Add Row</button>
+  <button on:click={removeDuplicates}>Remove Duplicates</button>
 </div>

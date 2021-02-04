@@ -16,7 +16,8 @@
 
   function setColor(lightness, aStar, bStar) {
     colors.update(cols => {
-      cols[id].value = [lightness, aStar, bStar]
+      const idx = cols.findIndex(col => col.id === id)
+      cols[idx].value = [lightness, aStar, bStar]
       return cols
     })
   }

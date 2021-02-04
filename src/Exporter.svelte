@@ -4,7 +4,6 @@
 
   // The guts of this could be moved to a util...
   function download() {
-    console.log($fileName)
     const file = new Blob([$exportText], {type: $fileType})
     const url = URL.createObjectURL(file)
     const link = document.createElement("a")
