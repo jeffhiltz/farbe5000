@@ -4,6 +4,13 @@
   import convert from 'color-convert'
 
   let raw = '111111 dogcat #777777 #eeeeee fe57a1'
+  let files
+
+  async function readFile() {
+    raw = await files[0].text()
+    doImport()
+  }
+  $: files && files[0] && readFile()
 
   function darkestColor(values) {
     return values.reduce((darkest, current) => current.value[0] < darkest[0] ? current.value : darkest , [101, 0, 0])
@@ -54,4 +61,6 @@
 
   <textarea bind:value={raw}></textarea>
   <button on:click={doImport}>Import</button>
+
+  File Import: <input type="file" bind:files />
 </div>
