@@ -3,7 +3,7 @@
   import { importText } from './text.js'
   import convert from 'color-convert'
 
-  let raw = '111111 #111111 dogcat #777777 #eeeeee fe57a1'
+  let raw = '111111 dogcat #777777 #eeeeee fe57a1'
 
   function darkestColor(values) {
     return values.reduce((darkest, current) => current.value[0] < darkest[0] ? current.value : darkest , [101, 0, 0])
