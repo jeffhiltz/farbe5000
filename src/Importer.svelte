@@ -1,6 +1,6 @@
 <script>
   import { background, colors } from './colors.js'
-  import { importText } from './text.js'
+  import { fileName, fileType, importText } from './text.js'
   import convert from 'color-convert'
 
   let raw = '111111 dogcat #777777 #eeeeee fe57a1'
@@ -8,6 +8,8 @@
 
   async function readFile() {
     raw = await files[0].text()
+    fileName.set(files[0].name)
+    fileType.set(files[0].type)
     doImport()
   }
   $: files && files[0] && readFile()
