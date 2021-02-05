@@ -1,5 +1,5 @@
 <script>
-  import { colors, colorValues } from './colors.js'
+  import { colors, colorValues, bgLightness, bgAStar, bgBStar } from './colors.js'
   import { createEventDispatcher } from 'svelte';
 
   export let id
@@ -15,6 +15,12 @@
       cols[position].value = [lightness, aStar, bStar]
       return cols
     })
+  }
+
+  function setBackground() {
+    bgLightness.set(lightness)
+    bgAStar.set(aStar)
+    bgBStar.set(bStar)
   }
 
   // handle changes to LAB values
@@ -42,6 +48,7 @@
 </style>
 
 <tr>
+  <td><button on:click={setBackground}>&nbsp</button></td>
   <td><button on:click={handleDelete}>X</button></td>
   <td bgcolor="{$colorValues[id].hex}"></td>
   <td><input type=number min=0 max=100 bind:value={lightness}></td>

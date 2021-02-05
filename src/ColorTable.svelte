@@ -75,6 +75,7 @@
   <table>
     <thead>
       <tr>
+        <th>Set Background</th>
         <th>Delete</th>
         <th>Swatch</th>
         <th>Lightness</th>
