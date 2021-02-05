@@ -1,5 +1,5 @@
 <script>
-  import { colors, colorValues } from './colors.js'
+  import { colors, colorValues, maxId } from './colors.js'
   import ColorTableRow from './ColorTableRow.svelte'
 
   function changeSortOrder(event) {
@@ -14,13 +14,20 @@
   }
 
   function addRow() {
-    const maxId = $colors.reduce((max, cur) =>  Math.max(max, cur.id), 0)
     const newRow = {
-      id: maxId + 1,
+      id: $maxId + 1,
       value: [0, 0, 0],
       originalHex: '',
     };
     colors.set([...$colors, newRow]);
+  }
+
+  function deleteRow(event) {
+    colors.update(cols => {
+      const idx = cols.findIndex(col => col.id == event.detail.id)
+      cols.splice(idx, 1)
+      return cols
+    })
   }
 
   function removeDuplicates() {
@@ -68,6 +75,7 @@
     <thead>
       <tr>
         <th>Move</th>
+        <th>Delete</th>
         <th>Swatch</th>
         <th>Lightness</th>
         <th>aStar (G-R)</th>
@@ -80,7 +88,7 @@
     </thead>
     <tbody>
       {#each $colorValues as value, idx (value.id)}
-      <ColorTableRow on:sortChange={changeSortOrder} {...value} position={idx}/>
+      <ColorTableRow on:sortChange={changeSortOrder} on:deleteRow={deleteRow} {...value} position={idx}/>
       {/each}
     </tbody>
   </table>

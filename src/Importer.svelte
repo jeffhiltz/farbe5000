@@ -1,5 +1,5 @@
 <script>
-  import { background, colors } from './colors.js'
+  import { background, colors, maxId } from './colors.js'
   import { fileName, fileType, importText } from './text.js'
   import convert from 'color-convert'
 
@@ -22,10 +22,11 @@
     const hexRegex = /[a-fA-F0-9]{6}/g
     const match = raw.match(hexRegex)
     if (match !== null) {
-      const newColors = match.map((rawHex, id) => {
+      let nextId = $maxId + 1
+      const newColors = match.map(rawHex => {
         const value = convert.hex.lab(rawHex)
         return {
-          id,
+          id: nextId++,
           value,
           originalHex: rawHex,
         }

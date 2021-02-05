@@ -34,3 +34,6 @@ export const colorValues = derived(
     //   }).sort((a, b) => a[$sortBy] - b[$sortBy]), // TODO only works for numeric values (ie: not hex...)
 );
 
+export const maxId = derived(colors, $colors => {
+  return $colors.reduce((max, cur) =>  Math.max(max, cur.id), 0)
+})

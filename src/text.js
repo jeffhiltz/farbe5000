@@ -8,8 +8,8 @@ export const fileType = writable('');
 const hexRegex = /[a-fA-F0-9]{6}/g;
 
 export const exportText = derived(
-  [importText, colors, colorValues],
-  ([$importText, $colors, $colorValues]) => {
+  [colorValues, colors, importText],
+  ([$colorValues, $colors, $importText]) => {
     const newText = $importText.replace(hexRegex, (match) => {
       const colorIndex = $colors.findIndex((color) => color.originalHex === match);
       return colorIndex > -1 ? $colorValues[colorIndex].hex : match;
