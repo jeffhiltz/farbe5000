@@ -23,20 +23,6 @@
 
   const dispatch = createEventDispatcher();
 
-  function handleUpClick(event) {
-    dispatch('sortChange', {
-      oldPos: position,
-      newPos: position - 1,
-    })
-  }
-
-  function handleDownClick(event) {
-    dispatch('sortChange', {
-      oldPos: position,
-      newPos: position + 1,
-    })
-  }
-
   function handleDelete(event) {
     dispatch('deleteRow', {
       id,
@@ -57,7 +43,6 @@
 </style>
 
 <tr>
-  <td><button on:click={handleUpClick}>&#8593;</button><button on:click={handleDownClick}>&#8595;</button></td>
   <td><button on:click={handleDelete}>X</button></td>
   <td bgcolor="{$colorValues[id].hex}"></td>
   <td><input type=number min=0 max=100 bind:value={lightness}></td>

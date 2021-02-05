@@ -14,17 +14,6 @@
     colors.set(event.detail.items)
   }
 
-  function changeSortOrder(event) {
-    const oldPos = event.detail.oldPos;
-    const newPos = event.detail.newPos;
-    if (newPos >= 0 && newPos < $colors.length) {
-      colors.update(cols => {
-        cols.splice(newPos, 0, cols.splice(oldPos, 1)[0]);
-        return cols;
-      });
-    }
-  }
-
   function addRow() {
     const newRow = {
       id: $maxId + 1,
@@ -86,7 +75,6 @@
   <table>
     <thead>
       <tr>
-        <th>Move</th>
         <th>Delete</th>
         <th>Swatch</th>
         <th>Lightness</th>
@@ -100,7 +88,7 @@
     </thead>
     <tbody use:dndzone="{{items: $colors, flipDurationMs}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}">
       {#each $colors as color, idx (color.id)}
-      <ColorTableRow on:sortChange={changeSortOrder} on:deleteRow={deleteRow} id={color.id} lightness={color.value[0]} aStar={color.value[1]} bStar={color.value[2]} position={idx} />
+      <ColorTableRow on:deleteRow={deleteRow} id={color.id} lightness={color.value[0]} aStar={color.value[1]} bStar={color.value[2]} position={idx} />
       {/each}
     </tbody>
   </table>
