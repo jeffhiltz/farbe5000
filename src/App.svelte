@@ -42,7 +42,7 @@
   <Importer />
   <Exporter />
 </section>
-<!-- <BackgroundPicker /> -->
+<BackgroundPicker />
 <!-- <SortSelector /> -->
 <h2>Values</h2>
 <p>

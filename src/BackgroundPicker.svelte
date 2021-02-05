@@ -1,8 +1,8 @@
 <script>
-  import { colors, background } from './colors.js'
+  import { bgLightness, bgAStar, bgBStar } from './colors.js'
 </script>
 
 <h2>Background Colour</h2>
-<input bind:value={$background}>
-
-
+<label>Lightness:</label><input type=number min=0 max=100 bind:value={$bgLightness}>
+<label>aStar:</label><input type=number min=-86 max=98 bind:value={$bgAStar}>
+<label>bStar:</label><input type=number min=-108 max=94 bind:value={$bgBStar}>

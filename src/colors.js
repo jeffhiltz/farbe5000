@@ -11,7 +11,14 @@ import convert from 'color-convert';
 //   originalHex: 'f357a1'
 // }
 export const colors = writable([]);
-export const background = writable([0, 0, 0]); // TODO maybe this should be an index, not a value?
+
+export const bgLightness = writable(0);
+export const bgAStar = writable(0);
+export const bgBStar = writable(0);
+
+export const backHex = derived(
+  [bgLightness, bgAStar, bgBStar],
+  ([$bgLightness, $bgAStar, $bgBStar]) => `#${convert.lab.hex($bgLightness, $bgAStar, $bgBStar)}`)
 
 export const sortBy = writable('id');
 

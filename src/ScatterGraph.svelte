@@ -1,6 +1,5 @@
 <script>
-  import { colors, colorValues, background } from './colors.js'
-  import convert from 'color-convert'
+  import { colors, colorValues, backHex } from './colors.js'
 
   let width = 500
   let height = 500
@@ -10,7 +9,6 @@
   const minAValue = -100
   const maxBValue = 100
   const minBValue = -100
-  $: backColor = `#${convert.lab.hex($background)}`
 
   // Calculate the position of a value within a range
   function calculatePercentage(value, min, max) {
@@ -36,7 +34,7 @@
 </style>
 
 <svg viewBox="0 0 500 500">
-  <rect width="100%" height="100%" fill="{backColor}"></rect>
+  <rect width="100%" height="100%" fill="{backHex}"></rect>
   {#each points as {hex, aPercent, bPercent}, idx}
     <ellipse rx="{pointWidth / 2}" ry="{pointWidth / 2}" fill="#{hex}" cx="{aPercent * width}" cy="{bPercent * height}"></ellipse>
   {/each}

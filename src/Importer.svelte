@@ -1,5 +1,5 @@
 <script>
-  import { background, colors, maxId } from './colors.js'
+  import { colors, maxId, bgLightness, bgAStar, bgBStar } from './colors.js'
   import { fileName, fileType, importText } from './text.js'
   import convert from 'color-convert'
 
@@ -32,11 +32,16 @@
         }
       })
       colors.set(newColors)
-      background.set(darkestColor(newColors))
+      const darkest = darkestColor(newColors)
+      bgLightness.set(darkest[0])
+      bgAStar.set(darkest[1])
+      bgBStar.set(darkest[2])
       importText.set(raw)
     } else {
       colors.set([])
-      background.set([0, 0, 0])
+      bgLightness.set(0)
+      bgAStar.set(0)
+      bgBStar.set(0)
       importText.set(raw)
     }
   }

@@ -1,6 +1,5 @@
 <script>
   import { exportText, fileName, fileType } from './text.js'
-  import convert from 'color-convert'
 
   // The guts of this could be moved to a util...
   function download() {

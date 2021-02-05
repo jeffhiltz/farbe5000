@@ -1,6 +1,5 @@
 <script>
   import { colors, colorValues } from './colors.js'
-  import convert from 'color-convert'
   import { createEventDispatcher } from 'svelte';
 
   export let id
