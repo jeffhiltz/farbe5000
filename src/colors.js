@@ -15,23 +15,28 @@ export const background = writable([0, 0, 0]); // TODO maybe this should be an i
 
 export const sortBy = writable('id');
 
+// let's try making colorValues a map where the key is the color ID
 export const colorValues = derived(
   [colors, sortBy],
-  ([$colors, $sortBy]) => $colors.map((color) => {
-    const rgb = convert.lab.rgb(color.value);
-    const hex = convert.rgb.hex(rgb);
-    return {
-      id: color.id,
-      hex,
-      red: rgb[0],
-      green: rgb[1],
-      blue: rgb[2],
-      lightness: color.value[0],
-      aStar: color.value[1],
-      bStar: color.value[2],
-    };
-  })// .sort((a, b) => a.sortPosition - b.sortPosition),
-    //   }).sort((a, b) => a[$sortBy] - b[$sortBy]), // TODO only works for numeric values (ie: not hex...)
+  ([$colors, $sortBy]) => {
+    const values = {}
+    $colors.forEach((color) => {
+      const rgb = convert.lab.rgb(color.value);
+      const hex = convert.rgb.hex(rgb);
+      values[color.id] = {
+        id: color.id,
+        hex,
+        red: rgb[0],
+        green: rgb[1],
+        blue: rgb[2],
+        lightness: color.value[0],
+        aStar: color.value[1],
+        bStar: color.value[2],
+      };
+    })// .sort((a, b) => a.sortPosition - b.sortPosition),
+      //   }).sort((a, b) => a[$sortBy] - b[$sortBy]), // TODO only works for numeric values (ie: not hex...)
+    return values
+  }
 );
 
 export const maxId = derived(colors, $colors => {

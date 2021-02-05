@@ -11,8 +11,8 @@ export const exportText = derived(
   [colorValues, colors, importText],
   ([$colorValues, $colors, $importText]) => {
     const newText = $importText.replace(hexRegex, (match) => {
-      const colorIndex = $colors.findIndex((color) => color.originalHex === match);
-      return colorIndex > -1 ? $colorValues[colorIndex].hex : match;
+      const color = $colors.find((color) => color.originalHex === match);
+      return color ? $colorValues[color.id].hex : match;
     });
     return newText;
   },

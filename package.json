@@ -13,7 +13,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.2.3",
     "rollup-plugin-terser": "^4.0.4",
-    "svelte": "^3.32.1"
+    "svelte": "^3.32.1",
+    "svelte-dnd-action": "^0.8.8"
   },
   "dependencies": {
     "color-convert": "^2.0.1",

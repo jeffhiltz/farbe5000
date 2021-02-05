@@ -1,17 +1,17 @@
 <script>
-  import { colorValues, background } from './colors.js'
+  import { colors, colorValues, background } from './colors.js'
   import convert from 'color-convert'
 
   let width = 500
   let height = 500
-  $: barSpace = width / $colorValues.length
+  $: barSpace = width / $colors.length
   $: barWidth = barSpace * 0.75
   $: backColor = `#${convert.lab.hex($background)}`
 
-  $: bars = $colorValues.map(color => {
+  $: bars = $colors.map(color => {
     return {
-      hex: color.hex,
-      lightness: color.lightness
+      hex: $colorValues[color.id].hex,
+      lightness: $colorValues[color.id].lightness,
     }
   })
 </script>

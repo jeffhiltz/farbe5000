@@ -1,5 +1,5 @@
 <script>
-  import { colorValues, background } from './colors.js'
+  import { colors, colorValues, background } from './colors.js'
   import convert from 'color-convert'
 
   let width = 500
@@ -17,11 +17,11 @@
     return (value - min) / (max - min)
   }
 
-  $: points = $colorValues.map(color => {
+  $: points = $colors.map(color => {
     return {
-      hex: color.hex,
-      aPercent: calculatePercentage(color.aStar, minAValue, maxAValue),
-      bPercent: calculatePercentage(color.bStar, minBValue, maxBValue),
+      hex: $colorValues[color.id].hex,
+      aPercent: calculatePercentage($colorValues[color.id].aStar, minAValue, maxAValue),
+      bPercent: calculatePercentage($colorValues[color.id].bStar, minBValue, maxBValue),
     }
   })
 </script>

@@ -1,6 +1,18 @@
 <script>
+  import { flip } from "svelte/animate"
+  import { dndzone } from "svelte-dnd-action"
   import { colors, colorValues, maxId } from './colors.js'
   import ColorTableRow from './ColorTableRow.svelte'
+
+  const flipDurationMs = 100
+
+  function handleDndConsider(event) {
+    colors.set(event.detail.items)
+  }
+
+  function handleDndFinalize(event) {
+    colors.set(event.detail.items)
+  }
 
   function changeSortOrder(event) {
     const oldPos = event.detail.oldPos;
@@ -86,9 +98,9 @@
         <th>Blue</th>
       </tr>
     </thead>
-    <tbody>
-      {#each $colorValues as value, idx (value.id)}
-      <ColorTableRow on:sortChange={changeSortOrder} on:deleteRow={deleteRow} {...value} position={idx}/>
+    <tbody use:dndzone="{{items: $colors, flipDurationMs}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}">
+      {#each $colors as color, idx (color.id)}
+      <ColorTableRow on:sortChange={changeSortOrder} on:deleteRow={deleteRow} id={color.id} lightness={color.value[0]} aStar={color.value[1]} bStar={color.value[2]} position={idx} />
       {/each}
     </tbody>
   </table>
