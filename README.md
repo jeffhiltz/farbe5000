@@ -10,7 +10,6 @@ This repo contains the source for the tool which is online here:
 
 ## TODO
 
-* add "delete row"
 * add control over background color
 * look at using [Oklab](https://bottosson.github.io/posts/oklab/) in addition (or instead of) CIELAB.
 * label graphs
