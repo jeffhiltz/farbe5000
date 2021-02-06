@@ -38,24 +38,32 @@
 
   .labels {
     font-size: 0.22vh;
+    text-anchor: middle;
+  }
+
+  .labels.y-labels {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    dominant-baseline: central;
   }
 </style>
 
 <svg viewBox="0 0 100 100">
   <svg x="5">
-    <rect width="95" height="95" fill="{backHex}"></rect>
+    <rect width="95" height="95" fill="{$backHex}"></rect>
     {#each points as {hex, aPercent, bPercent}, idx}
     <ellipse rx="{pointWidth / 2}" ry="{pointWidth / 2}" fill="#{hex}" cx="{aPercent * width}" cy="{bPercent * height}"></ellipse>
     {/each}
   </svg>
-  <g class="labels">
-    {#each range(7, 1) as i}
-    <text x="0" y="{95/8 * i + 2}">{(i * 1/8 * 200) - 100}</text>
-    {/each}
+  <g class="labels y-labels">
+    <text x="2" y="{0.25 * 95}">Blue</text>
+    <text x="2" y="{0.5 * 95}">bStar</text>
+    <text x="2" y="{0.75 * 95}">Yellow</text>
   </g>
   <g class="labels">
-    <text x="25" y="98.5">Green</text>
-    <text x="75" y="98.5">Red</text>
+    <text x="{0.25 * 95 + 5}" y="98.5">Green</text>
+    <text x="{0.5 * 95 + 5}" y="98.5">aStar</text>
+    <text x="{0.75 * 95 + 5}" y="98.5">Red</text>
   </g>
 </svg>
 

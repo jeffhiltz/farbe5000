@@ -3,7 +3,7 @@
   import { fileName, fileType, importText } from './text.js'
   import convert from 'color-convert'
 
-  let raw = '111111 dogcat #777777 #eeeeee fe57a1'
+  let raw = '#111111 fcfcfc #07edff #00AD2C #0c6f00 dogcat 760000'
   let files
 
   async function readFile() {
