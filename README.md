@@ -11,4 +11,5 @@ This repo contains the source for the tool which is online here:
 ## TODO
 
 * look at using [Oklab](https://bottosson.github.io/posts/oklab/) in addition (or instead of) CIELAB.
+  * I would probably need to port this [Python implementation](https://github.com/nschloe/colorio/blob/3c1a8f2869f1715e73e848cf26ce231204016ab8/colorio/cs/_oklab.py) to Javascript (color-convert).
 * label graphs
